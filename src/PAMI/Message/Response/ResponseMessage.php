@@ -133,7 +133,7 @@ class ResponseMessage extends IncomingMessage
     {
         return
             stristr($this->getKey('EventList'), 'start') !== false
-            || stristr($this->getMessage(), 'follow') !== false
+            || (stristr($this->getMessage(), 'follow') !== false && $this->getMessage() !== 'Command output follows')
         ;
     }
 
